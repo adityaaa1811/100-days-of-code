@@ -1,19 +1,37 @@
-console.log("Modern Portfolio Loaded 🚀");
+console.log("Portfolio Loaded 🚀");
 
-/* Simple Fade Animation */
+const themeButton =
+    document.querySelector("#theme-btn");
 
-const cards = document.querySelectorAll(
-    ".skill-card, .project-card"
-);
+let darkMode = true;
 
-cards.forEach((card) => {
+themeButton.addEventListener("click", () => {
 
-    card.addEventListener("mouseenter", () => {
-        card.style.transform = "translateY(-10px)";
-    });
+    if (darkMode) {
 
-    card.addEventListener("mouseleave", () => {
-        card.style.transform = "translateY(0)";
-    });
+        document.body.style.backgroundColor =
+            "#ffffff";
+
+        document.body.style.color =
+            "#000000";
+
+        themeButton.innerText =
+            "Dark Theme";
+
+        darkMode = false;
+
+    } else {
+
+        document.body.style.backgroundColor =
+            "#0a0a0a";
+
+        document.body.style.color =
+            "#ffffff";
+
+        themeButton.innerText =
+            "Light Theme";
+
+        darkMode = true;
+    }
 
 });
