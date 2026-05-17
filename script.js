@@ -3,14 +3,36 @@ console.log("Portfolio Loaded 🚀");
 const themeButton =
     document.querySelector("#theme-btn");
 
+const body =
+    document.body;
+
+const navLinks =
+    document.querySelectorAll("nav a");
+
+const heroText =
+    document.querySelectorAll(
+        ".hero-description, .section-text"
+    );
+
+const sectionTitles =
+    document.querySelectorAll(
+        ".section-title"
+    );
+
 const skillCards =
-    document.querySelectorAll(".skill-card");
+    document.querySelectorAll(
+        ".skill-card"
+    );
 
 const projectCards =
-    document.querySelectorAll(".project-card");
+    document.querySelectorAll(
+        ".project-card"
+    );
 
 const sections =
-    document.querySelectorAll(".section");
+    document.querySelectorAll(
+        ".section"
+    );
 
 let darkMode = true;
 
@@ -20,58 +42,26 @@ themeButton.addEventListener("click", () => {
 
         /* LIGHT MODE */
 
-        document.body.style.backgroundColor =
+        body.style.backgroundColor =
             "#f5f5f5";
 
-        document.body.style.color =
+        body.style.color =
             "#111111";
 
         themeButton.innerText =
             "Dark Theme";
 
-        sections.forEach((section) => {
-            section.style.backgroundColor =
-                "#ffffff";
+        navLinks.forEach((link) => {
+            link.style.color = "#111111";
         });
 
-        skillCards.forEach((card) => {
-
-            card.style.backgroundColor =
-                "#ffffff";
-
-            card.style.color =
-                "#111111";
-
-            card.style.border =
-                "1px solid #ddd";
+        heroText.forEach((text) => {
+            text.style.color = "#333333";
         });
 
-        projectCards.forEach((card) => {
-
-            card.style.backgroundColor =
-                "#ffffff";
-
-            card.style.color =
-                "#111111";
-
-            card.style.border =
-                "1px solid #ddd";
+        sectionTitles.forEach((title) => {
+            title.style.color = "#111111";
         });
-
-        darkMode = false;
-
-    } else {
-
-        /* DARK MODE */
-
-        document.body.style.backgroundColor =
-            "#0a0a0a";
-
-        document.body.style.color =
-            "#ffffff";
-
-        themeButton.innerText =
-            "Light Theme";
 
         sections.forEach((section) => {
             section.style.backgroundColor =
@@ -81,25 +71,81 @@ themeButton.addEventListener("click", () => {
         skillCards.forEach((card) => {
 
             card.style.backgroundColor =
-                "#111";
-
-            card.style.color =
                 "#ffffff";
 
+            card.style.color =
+                "#111111";
+
             card.style.border =
-                "1px solid #222";
+                "1px solid #dddddd";
         });
 
         projectCards.forEach((card) => {
 
             card.style.backgroundColor =
-                "#111";
+                "#ffffff";
+
+            card.style.color =
+                "#111111";
+
+            card.style.border =
+                "1px solid #dddddd";
+        });
+
+        darkMode = false;
+
+    } else {
+
+        /* DARK MODE */
+
+        body.style.backgroundColor =
+            "#0a0a0a";
+
+        body.style.color =
+            "#ffffff";
+
+        themeButton.innerText =
+            "Light Theme";
+
+        navLinks.forEach((link) => {
+            link.style.color = "#ffffff";
+        });
+
+        heroText.forEach((text) => {
+            text.style.color = "#b3b3b3";
+        });
+
+        sectionTitles.forEach((title) => {
+            title.style.color = "#ffffff";
+        });
+
+        sections.forEach((section) => {
+            section.style.backgroundColor =
+                "transparent";
+        });
+
+        skillCards.forEach((card) => {
+
+            card.style.backgroundColor =
+                "#111111";
 
             card.style.color =
                 "#ffffff";
 
             card.style.border =
-                "1px solid #222";
+                "1px solid #222222";
+        });
+
+        projectCards.forEach((card) => {
+
+            card.style.backgroundColor =
+                "#111111";
+
+            card.style.color =
+                "#ffffff";
+
+            card.style.border =
+                "1px solid #222222";
         });
 
         darkMode = true;
