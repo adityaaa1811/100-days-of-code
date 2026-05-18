@@ -1,3 +1,24 @@
+const text =
+    "Software Engineer";
+
+let index = 0;
+
+function typeEffect() {
+
+    if (index < text.length) {
+
+        document.querySelector(
+            "#typing-text"
+        ).innerHTML +=
+            text.charAt(index);
+
+        index++;
+
+        setTimeout(typeEffect, 120);
+    }
+}
+
+typeEffect();
 console.log("Portfolio Loaded 🚀");
 
 const themeButton =
@@ -91,6 +112,18 @@ themeButton.addEventListener("click", () => {
             card.style.border =
                 "1px solid #dddddd";
         });
+        setInterval(() => {
+
+            const typingText =
+                document.querySelector(
+                    "#typing-text"
+                );
+        
+            typingText.classList.toggle(
+                "active"
+            );
+        
+        }, 500);
 
         darkMode = false;
 

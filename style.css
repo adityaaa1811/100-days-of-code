@@ -295,6 +295,10 @@ nav a:hover {
 .project-card p {
     color: #b3b3b3;
     line-height: 1.8;
+    .project-card p {
+
+        margin-bottom: 15px;
+    }
 }
 
 /* CONTACT */
@@ -421,4 +425,17 @@ footer {
     background-color: #ff6b00;
 
     transform: translateY(-3px);
+}
+#typing-text::after {
+
+    content: "|";
+
+    animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+
+    50% {
+        opacity: 0;
+    }
 }
