@@ -1,3 +1,9 @@
+console.log("Portfolio Loaded 🚀");
+
+/* =========================
+   TYPING ANIMATION
+========================= */
+
 const text =
     "Software Engineer";
 
@@ -19,7 +25,10 @@ function typeEffect() {
 }
 
 typeEffect();
-console.log("Portfolio Loaded 🚀");
+
+/* =========================
+   THEME TOGGLE
+========================= */
 
 const themeButton =
     document.querySelector("#theme-btn");
@@ -50,9 +59,14 @@ const projectCards =
         ".project-card"
     );
 
-const sections =
+const contactLinks =
     document.querySelectorAll(
-        ".section"
+        ".contact-links a"
+    );
+
+const techStacks =
+    document.querySelectorAll(
+        ".tech-stack"
     );
 
 let darkMode = true;
@@ -61,7 +75,9 @@ themeButton.addEventListener("click", () => {
 
     if (darkMode) {
 
-        /* LIGHT MODE */
+        /* =========================
+           LIGHT MODE
+        ========================= */
 
         body.style.backgroundColor =
             "#f5f5f5";
@@ -72,22 +88,29 @@ themeButton.addEventListener("click", () => {
         themeButton.innerText =
             "Dark Theme";
 
+        /* NAV LINKS */
+
         navLinks.forEach((link) => {
-            link.style.color = "#111111";
+
+            link.style.color =
+                "#111111";
         });
 
+        /* TEXT */
+
         heroText.forEach((text) => {
-            text.style.color = "#333333";
+
+            text.style.color =
+                "#333333";
         });
 
         sectionTitles.forEach((title) => {
-            title.style.color = "#111111";
+
+            title.style.color =
+                "#111111";
         });
 
-        sections.forEach((section) => {
-            section.style.backgroundColor =
-                "transparent";
-        });
+        /* SKILL CARDS */
 
         skillCards.forEach((card) => {
 
@@ -101,6 +124,8 @@ themeButton.addEventListener("click", () => {
                 "1px solid #dddddd";
         });
 
+        /* PROJECT CARDS */
+
         projectCards.forEach((card) => {
 
             card.style.backgroundColor =
@@ -112,24 +137,36 @@ themeButton.addEventListener("click", () => {
             card.style.border =
                 "1px solid #dddddd";
         });
-        setInterval(() => {
 
-            const typingText =
-                document.querySelector(
-                    "#typing-text"
-                );
-        
-            typingText.classList.toggle(
-                "active"
-            );
-        
-        }, 500);
+        /* CONTACT LINKS */
+
+        contactLinks.forEach((link) => {
+
+            link.style.backgroundColor =
+                "#ffffff";
+
+            link.style.color =
+                "#111111";
+
+            link.style.border =
+                "1px solid #dddddd";
+        });
+
+        /* TECH STACK */
+
+        techStacks.forEach((stack) => {
+
+            stack.style.color =
+                "#ff6b00";
+        });
 
         darkMode = false;
 
     } else {
 
-        /* DARK MODE */
+        /* =========================
+           DARK MODE
+        ========================= */
 
         body.style.backgroundColor =
             "#0a0a0a";
@@ -140,22 +177,29 @@ themeButton.addEventListener("click", () => {
         themeButton.innerText =
             "Light Theme";
 
+        /* NAV LINKS */
+
         navLinks.forEach((link) => {
-            link.style.color = "#ffffff";
+
+            link.style.color =
+                "#ffffff";
         });
 
+        /* TEXT */
+
         heroText.forEach((text) => {
-            text.style.color = "#b3b3b3";
+
+            text.style.color =
+                "#b3b3b3";
         });
 
         sectionTitles.forEach((title) => {
-            title.style.color = "#ffffff";
+
+            title.style.color =
+                "#ffffff";
         });
 
-        sections.forEach((section) => {
-            section.style.backgroundColor =
-                "transparent";
-        });
+        /* SKILL CARDS */
 
         skillCards.forEach((card) => {
 
@@ -169,6 +213,8 @@ themeButton.addEventListener("click", () => {
                 "1px solid #222222";
         });
 
+        /* PROJECT CARDS */
+
         projectCards.forEach((card) => {
 
             card.style.backgroundColor =
@@ -181,7 +227,28 @@ themeButton.addEventListener("click", () => {
                 "1px solid #222222";
         });
 
+        /* CONTACT LINKS */
+
+        contactLinks.forEach((link) => {
+
+            link.style.backgroundColor =
+                "#111111";
+
+            link.style.color =
+                "#ffffff";
+
+            link.style.border =
+                "1px solid #222222";
+        });
+
+        /* TECH STACK */
+
+        techStacks.forEach((stack) => {
+
+            stack.style.color =
+                "#ff8533";
+        });
+
         darkMode = true;
     }
-
 });

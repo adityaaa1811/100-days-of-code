@@ -14,4 +14,7 @@ function add(a, b) {
 
 const result = add(5, 7);
 
-console.log(result);
+console.log(
+    "Sum:",
+    result
+);

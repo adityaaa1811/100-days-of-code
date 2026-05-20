@@ -2,9 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
 
-* {
     transition:
         background-color 0.3s,
         color 0.3s,
@@ -26,6 +24,7 @@ body {
 /* NAVBAR */
 
 nav {
+
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -33,106 +32,172 @@ nav {
     margin-bottom: 80px;
 
     position: sticky;
+    top: 0;
 
-top: 0;
+    backdrop-filter: blur(10px);
 
-backdrop-filter: blur(10px);
+    padding: 20px 0;
 
-padding: 20px 0;
-
-z-index: 1000;
+    z-index: 1000;
 }
 
 .logo {
+
     font-size: 28px;
     font-weight: bold;
+
     color: #ff6b00;
 }
 
 nav ul {
+
     display: flex;
     list-style: none;
+
     gap: 30px;
 }
 
 nav a {
+
     text-decoration: none;
+
     color: white;
-    transition: 0.3s;
 }
 
 nav a:hover {
+
     color: #ff6b00;
 }
 
 .nav-btn {
+
     background-color: #ff6b00;
+
     padding: 12px 24px;
+
     border-radius: 30px;
+
     color: white;
+
     font-weight: bold;
 }
 
 .nav-btn:hover {
+
     background-color: #ff8533;
+
     color: white;
+
+    transform: translateY(-3px);
 }
 
 /* HERO */
 
 .hero {
+
     min-height: 80vh;
 
     display: flex;
     justify-content: space-between;
     align-items: center;
+
     gap: 60px;
 
     margin-bottom: 120px;
 }
 
 .hero-left {
+
     flex: 1;
 }
 
 .small-heading {
+
     color: #ff6b00;
+
     margin-bottom: 20px;
+
     letter-spacing: 2px;
 }
 
 .hero h1 {
+
     font-size: 100px;
+
     line-height: 1;
+
     margin-bottom: 30px;
 }
 
+#typing-text {
+
+    color: #ffffff;
+
+    text-shadow:
+        0 0 20px rgba(255, 107, 0, 0.35);
+}
+
+#typing-text::after {
+
+    content: "|";
+
+    animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+
+    50% {
+        opacity: 0;
+    }
+}
+
 .hero-description {
+
     color: #b3b3b3;
+
     font-size: 18px;
+
     line-height: 1.8;
+
     max-width: 600px;
 
     margin-bottom: 40px;
 }
 
 .hero-buttons {
+
     display: flex;
+    flex-wrap: wrap;
+
     gap: 20px;
 }
 
+/* BUTTONS */
+
 .primary-btn,
-.secondary-btn {
+.secondary-btn,
+#theme-btn {
+
     padding: 14px 28px;
+
     border-radius: 40px;
+
     text-decoration: none;
-    transition: 0.3s;
+
     font-weight: bold;
+
+    cursor: pointer;
+
+    font-size: 16px;
 }
 
 .primary-btn {
+
     background-color: #ff6b00;
+
     color: white;
+
+    border: none;
 }
 
 .primary-btn:hover {
@@ -146,18 +211,43 @@ nav a:hover {
 }
 
 .secondary-btn {
+
     border: 1px solid #444;
+
     color: white;
+
+    background: transparent;
 }
 
 .secondary-btn:hover {
+
     border-color: #ff6b00;
+
     color: #ff6b00;
+
+    transform: translateY(-4px);
+}
+
+#theme-btn {
+
+    background-color: #222;
+
+    color: white;
+
+    border: none;
+}
+
+#theme-btn:hover {
+
+    background-color: #ff6b00;
+
+    transform: translateY(-4px);
 }
 
 /* HERO CARD */
 
 .hero-right {
+
     flex: 1;
 
     display: flex;
@@ -184,11 +274,14 @@ nav a:hover {
 }
 
 .hero-card h2 {
+
     font-size: 36px;
+
     margin-bottom: 20px;
 }
 
 .hero-card p {
+
     line-height: 1.8;
 }
 
@@ -200,28 +293,38 @@ nav a:hover {
 }
 
 .section-subtitle {
+
     color: #ff6b00;
+
     margin-bottom: 20px;
+
     font-weight: bold;
 }
 
 .section-title {
+
     font-size: 56px;
+
     max-width: 800px;
+
     line-height: 1.2;
 
     margin-bottom: 30px;
 }
 
 .section-text {
+
     color: #b3b3b3;
+
     max-width: 800px;
+
     line-height: 1.8;
 }
 
 /* SKILLS */
 
 .skills-grid {
+
     display: grid;
 
     grid-template-columns:
@@ -231,6 +334,7 @@ nav a:hover {
 }
 
 .skill-card {
+
     background-color: #111;
 
     border: 1px solid #222;
@@ -238,8 +342,6 @@ nav a:hover {
     padding: 30px;
 
     border-radius: 20px;
-
-    transition: 0.3s;
 
     text-align: center;
 }
@@ -257,6 +359,7 @@ nav a:hover {
 /* PROJECTS */
 
 .projects-grid {
+
     display: grid;
 
     grid-template-columns:
@@ -266,6 +369,7 @@ nav a:hover {
 }
 
 .project-card {
+
     background-color: #111;
 
     border: 1px solid #222;
@@ -273,43 +377,55 @@ nav a:hover {
     padding: 30px;
 
     border-radius: 25px;
-
-    transition: 0.3s;
 }
 
 .project-card:hover {
 
-    transform: translateY(-10px);
+    transform:
+        translateY(-10px)
+        scale(1.02);
 
     border-color: #ff6b00;
 
     box-shadow:
-        0 0 25px rgba(255, 107, 0, 0.25);
+        0 0 35px rgba(255, 107, 0, 0.35);
 }
 
 .project-card h3 {
+
     margin-bottom: 20px;
+
     font-size: 24px;
 }
 
 .project-card p {
-    color: #b3b3b3;
-    line-height: 1.8;
-    .project-card p {
 
-        margin-bottom: 15px;
-    }
+    color: #b3b3b3;
+
+    line-height: 1.8;
+
+    margin-bottom: 15px;
+}
+
+.tech-stack {
+
+    color: #ff8533 !important;
+
+    font-weight: bold;
 }
 
 /* CONTACT */
 
 .contact-links {
+
     display: flex;
     flex-wrap: wrap;
+
     gap: 20px;
 }
 
 .contact-links a {
+
     text-decoration: none;
 
     background-color: #111;
@@ -321,23 +437,29 @@ nav a:hover {
     border-radius: 15px;
 
     color: white;
-
-    transition: 0.3s;
 }
 
 .contact-links a:hover {
+
     border-color: #ff6b00;
+
     transform: translateY(-5px);
+
+    box-shadow:
+        0 0 20px rgba(255, 107, 0, 0.25);
 }
 
 .contact-links i {
+
     margin-right: 10px;
+
     color: #ff6b00;
 }
 
 /* FOOTER */
 
 footer {
+
     border-top: 1px solid #222;
 
     padding-top: 30px;
@@ -352,14 +474,17 @@ footer {
 @media (max-width: 992px) {
 
     .hero {
+
         flex-direction: column;
     }
 
     .hero h1 {
+
         font-size: 70px;
     }
 
     .section-title {
+
         font-size: 42px;
     }
 }
@@ -367,75 +492,44 @@ footer {
 @media (max-width: 768px) {
 
     body {
+
         padding: 18px;
     }
 
     nav {
+
         flex-direction: column;
+
         gap: 20px;
     }
 
     nav ul {
+
         gap: 15px;
     }
 
     .hero {
+
         margin-bottom: 80px;
     }
 
     .hero h1 {
+
         font-size: 52px;
     }
 
     .section-title {
+
         font-size: 34px;
     }
 
     .hero-buttons {
+
         flex-direction: column;
     }
 
     .contact-links {
+
         flex-direction: column;
-    }
-}
-#theme-btn {
-
-    margin-top: 25px;
-
-    padding: 14px 28px;
-
-    border: none;
-
-    border-radius: 40px;
-
-    background-color: #222;
-
-    color: white;
-
-    cursor: pointer;
-
-    font-size: 16px;
-
-    transition: 0.3s;
-}
-
-#theme-btn:hover {
-
-    background-color: #ff6b00;
-
-    transform: translateY(-3px);
-}
-#typing-text::after {
-
-    content: "|";
-
-    animation: blink 0.7s infinite;
-}
-
-@keyframes blink {
-
-    50% {
-        opacity: 0;
     }
 }
