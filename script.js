@@ -11,11 +11,14 @@ let index = 0;
 
 function typeEffect() {
 
-    if (index < text.length) {
-
+    const typingText =
         document.querySelector(
             "#typing-text"
-        ).innerHTML +=
+        );
+
+    if (index < text.length) {
+
+        typingText.innerHTML +=
             text.charAt(index);
 
         index++;
@@ -69,6 +72,11 @@ const techStacks =
         ".tech-stack"
     );
 
+const heroCard =
+    document.querySelector(
+        ".hero-card"
+    );
+
 let darkMode = true;
 
 themeButton.addEventListener("click", () => {
@@ -96,13 +104,15 @@ themeButton.addEventListener("click", () => {
                 "#111111";
         });
 
-        /* TEXT */
+        /* HERO + SECTION TEXT */
 
         heroText.forEach((text) => {
 
             text.style.color =
                 "#333333";
         });
+
+        /* SECTION TITLES */
 
         sectionTitles.forEach((title) => {
 
@@ -160,6 +170,11 @@ themeButton.addEventListener("click", () => {
                 "#ff6b00";
         });
 
+        /* HERO CARD */
+
+        heroCard.style.boxShadow =
+            "0 0 35px rgba(255, 107, 0, 0.25)";
+
         darkMode = false;
 
     } else {
@@ -185,13 +200,15 @@ themeButton.addEventListener("click", () => {
                 "#ffffff";
         });
 
-        /* TEXT */
+        /* HERO + SECTION TEXT */
 
         heroText.forEach((text) => {
 
             text.style.color =
                 "#b3b3b3";
         });
+
+        /* SECTION TITLES */
 
         sectionTitles.forEach((title) => {
 
@@ -248,6 +265,11 @@ themeButton.addEventListener("click", () => {
             stack.style.color =
                 "#ff8533";
         });
+
+        /* HERO CARD */
+
+        heroCard.style.boxShadow =
+            "0 0 40px rgba(255, 107, 0, 0.35)";
 
         darkMode = true;
     }
