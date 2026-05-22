@@ -274,3 +274,26 @@ themeButton.addEventListener("click", () => {
         darkMode = true;
     }
 });
+const hiddenElements =
+    document.querySelectorAll(
+        ".section"
+    );
+
+hiddenElements.forEach((el) => {
+
+    el.classList.add("hidden");
+});
+
+window.addEventListener("scroll", () => {
+
+    hiddenElements.forEach((el) => {
+
+        const rect =
+            el.getBoundingClientRect();
+
+        if (rect.top < window.innerHeight - 100) {
+
+            el.classList.add("show");
+        }
+    });
+});

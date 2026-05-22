@@ -33,3 +33,36 @@ Learnings:
 - Practiced array manipulation
 - Improved simulation problem solving
 - Understood edge cases like [9,9,9]
+
+# Problem 2: Move Zeroes
+
+Problem:
+Move all zeroes to the end of array
+while maintaining relative order
+of non-zero elements.
+
+Approach:
+Used Two Pointer technique.
+
+Maintained:
+- one pointer for placing non-zero elements
+- another pointer for traversal
+
+Whenever non-zero element found:
+- swapped with correct position
+- incremented non-zero pointer
+
+Time Complexity:
+O(n)
+
+Space Complexity:
+O(1)
+
+Mistakes:
+Initially confused about pointer movement after swapping.
+
+Learnings:
+- Learned in-place array modification
+- Strengthened Two Pointer technique
+- Improved array traversal logic
+- Understood optimization without extra space
