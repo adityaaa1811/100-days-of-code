@@ -1,3 +1,11 @@
+const savedTheme =
+    localStorage.getItem("theme");
+
+    if (savedTheme === "light") {
+
+        enableLightMode();
+    }
+
 console.log("Portfolio Loaded 🚀");
 
 /* =========================
@@ -96,6 +104,11 @@ themeButton.addEventListener("click", () => {
         themeButton.innerText =
             "Dark Theme";
 
+            localStorage.setItem(
+                "theme",
+                "light"
+            );
+
         /* NAV LINKS */
 
         navLinks.forEach((link) => {
@@ -191,6 +204,11 @@ themeButton.addEventListener("click", () => {
 
         themeButton.innerText =
             "Light Theme";
+
+            localStorage.setItem(
+                "theme",
+                "dark"
+            );
 
         /* NAV LINKS */
 
@@ -297,3 +315,4 @@ window.addEventListener("scroll", () => {
         }
     });
 });
+
