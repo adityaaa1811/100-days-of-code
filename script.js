@@ -1,54 +1,21 @@
-const savedTheme =
-    localStorage.getItem("theme");
-
-    if (savedTheme === "light") {
-
-        enableLightMode();
-    }
-
 console.log("Portfolio Loaded 🚀");
 
 /* =========================
-   TYPING ANIMATION
+   DOM ELEMENTS
 ========================= */
-
-const text =
-    "Software Engineer";
-
-let index = 0;
-
-function typeEffect() {
-
-    const typingText =
-        document.querySelector(
-            "#typing-text"
-        );
-
-    if (index < text.length) {
-
-        typingText.innerHTML +=
-            text.charAt(index);
-
-        index++;
-
-        setTimeout(typeEffect, 120);
-    }
-}
-
-typeEffect();
-
-/* =========================
-   THEME TOGGLE
-========================= */
-
-const themeButton =
-    document.querySelector("#theme-btn");
 
 const body =
     document.body;
 
+const themeButton =
+    document.querySelector(
+        "#theme-btn"
+    );
+
 const navLinks =
-    document.querySelectorAll("nav a");
+    document.querySelectorAll(
+        "nav a"
+    );
 
 const heroText =
     document.querySelectorAll(
@@ -85,213 +52,258 @@ const heroCard =
         ".hero-card"
     );
 
-let darkMode = true;
+const topButton =
+    document.querySelector(
+        "#top-btn"
+    );
 
-themeButton.addEventListener("click", () => {
+/* =========================
+   TYPING ANIMATION
+========================= */
 
-    if (darkMode) {
+const text =
+    "Software Engineer";
 
-        /* =========================
-           LIGHT MODE
-        ========================= */
+let index = 0;
 
-        body.style.backgroundColor =
-            "#f5f5f5";
+function typeEffect() {
 
-        body.style.color =
+    const typingText =
+        document.querySelector(
+            "#typing-text"
+        );
+
+    if (index < text.length) {
+
+        typingText.innerHTML +=
+            text.charAt(index);
+
+        index++;
+
+        setTimeout(
+            typeEffect,
+            120
+        );
+    }
+}
+
+typeEffect();
+
+/* =========================
+   LIGHT MODE FUNCTION
+========================= */
+
+function enableLightMode() {
+
+    body.style.backgroundColor =
+        "#f5f5f5";
+
+    body.style.color =
+        "#111111";
+
+    themeButton.innerText =
+        "Dark Theme";
+
+    navLinks.forEach((link) => {
+
+        link.style.color =
             "#111111";
+    });
 
-        themeButton.innerText =
-            "Dark Theme";
+    heroText.forEach((text) => {
 
-            localStorage.setItem(
-                "theme",
-                "light"
-            );
+        text.style.color =
+            "#333333";
+    });
 
-        /* NAV LINKS */
+    sectionTitles.forEach((title) => {
 
-        navLinks.forEach((link) => {
+        title.style.color =
+            "#111111";
+    });
 
-            link.style.color =
-                "#111111";
-        });
+    skillCards.forEach((card) => {
 
-        /* HERO + SECTION TEXT */
-
-        heroText.forEach((text) => {
-
-            text.style.color =
-                "#333333";
-        });
-
-        /* SECTION TITLES */
-
-        sectionTitles.forEach((title) => {
-
-            title.style.color =
-                "#111111";
-        });
-
-        /* SKILL CARDS */
-
-        skillCards.forEach((card) => {
-
-            card.style.backgroundColor =
-                "#ffffff";
-
-            card.style.color =
-                "#111111";
-
-            card.style.border =
-                "1px solid #dddddd";
-        });
-
-        /* PROJECT CARDS */
-
-        projectCards.forEach((card) => {
-
-            card.style.backgroundColor =
-                "#ffffff";
-
-            card.style.color =
-                "#111111";
-
-            card.style.border =
-                "1px solid #dddddd";
-        });
-
-        /* CONTACT LINKS */
-
-        contactLinks.forEach((link) => {
-
-            link.style.backgroundColor =
-                "#ffffff";
-
-            link.style.color =
-                "#111111";
-
-            link.style.border =
-                "1px solid #dddddd";
-        });
-
-        /* TECH STACK */
-
-        techStacks.forEach((stack) => {
-
-            stack.style.color =
-                "#ff6b00";
-        });
-
-        /* HERO CARD */
-
-        heroCard.style.boxShadow =
-            "0 0 35px rgba(255, 107, 0, 0.25)";
-
-        darkMode = false;
-
-    } else {
-
-        /* =========================
-           DARK MODE
-        ========================= */
-
-        body.style.backgroundColor =
-            "#0a0a0a";
-
-        body.style.color =
+        card.style.backgroundColor =
             "#ffffff";
 
-        themeButton.innerText =
-            "Light Theme";
+        card.style.color =
+            "#111111";
 
-            localStorage.setItem(
-                "theme",
-                "dark"
-            );
+        card.style.border =
+            "1px solid #dddddd";
+    });
 
-        /* NAV LINKS */
+    projectCards.forEach((card) => {
 
-        navLinks.forEach((link) => {
+        card.style.backgroundColor =
+            "#ffffff";
 
-            link.style.color =
-                "#ffffff";
-        });
+        card.style.color =
+            "#111111";
 
-        /* HERO + SECTION TEXT */
+        card.style.border =
+            "1px solid #dddddd";
+    });
 
-        heroText.forEach((text) => {
+    contactLinks.forEach((link) => {
 
-            text.style.color =
-                "#b3b3b3";
-        });
+        link.style.backgroundColor =
+            "#ffffff";
 
-        /* SECTION TITLES */
+        link.style.color =
+            "#111111";
 
-        sectionTitles.forEach((title) => {
+        link.style.border =
+            "1px solid #dddddd";
+    });
 
-            title.style.color =
-                "#ffffff";
-        });
+    techStacks.forEach((stack) => {
 
-        /* SKILL CARDS */
+        stack.style.color =
+            "#ff6b00";
+    });
 
-        skillCards.forEach((card) => {
+    heroCard.style.boxShadow =
+        "0 0 35px rgba(255, 107, 0, 0.25)";
 
-            card.style.backgroundColor =
-                "#111111";
+    localStorage.setItem(
+        "theme",
+        "light"
+    );
 
-            card.style.color =
-                "#ffffff";
+    darkMode = false;
+}
 
-            card.style.border =
-                "1px solid #222222";
-        });
+/* =========================
+   DARK MODE FUNCTION
+========================= */
 
-        /* PROJECT CARDS */
+function enableDarkMode() {
 
-        projectCards.forEach((card) => {
+    body.style.backgroundColor =
+        "#0a0a0a";
 
-            card.style.backgroundColor =
-                "#111111";
+    body.style.color =
+        "#ffffff";
 
-            card.style.color =
-                "#ffffff";
+    themeButton.innerText =
+        "Light Theme";
 
-            card.style.border =
-                "1px solid #222222";
-        });
+    navLinks.forEach((link) => {
 
-        /* CONTACT LINKS */
+        link.style.color =
+            "#ffffff";
+    });
 
-        contactLinks.forEach((link) => {
+    heroText.forEach((text) => {
 
-            link.style.backgroundColor =
-                "#111111";
+        text.style.color =
+            "#b3b3b3";
+    });
 
-            link.style.color =
-                "#ffffff";
+    sectionTitles.forEach((title) => {
 
-            link.style.border =
-                "1px solid #222222";
-        });
+        title.style.color =
+            "#ffffff";
+    });
 
-        /* TECH STACK */
+    skillCards.forEach((card) => {
 
-        techStacks.forEach((stack) => {
+        card.style.backgroundColor =
+            "#111111";
 
-            stack.style.color =
-                "#ff8533";
-        });
+        card.style.color =
+            "#ffffff";
 
-        /* HERO CARD */
+        card.style.border =
+            "1px solid #222222";
+    });
 
-        heroCard.style.boxShadow =
-            "0 0 40px rgba(255, 107, 0, 0.35)";
+    projectCards.forEach((card) => {
 
-        darkMode = true;
+        card.style.backgroundColor =
+            "#111111";
+
+        card.style.color =
+            "#ffffff";
+
+        card.style.border =
+            "1px solid #222222";
+    });
+
+    contactLinks.forEach((link) => {
+
+        link.style.backgroundColor =
+            "#111111";
+
+        link.style.color =
+            "#ffffff";
+
+        link.style.border =
+            "1px solid #222222";
+    });
+
+    techStacks.forEach((stack) => {
+
+        stack.style.color =
+            "#ff8533";
+    });
+
+    heroCard.style.boxShadow =
+        "0 0 40px rgba(255, 107, 0, 0.35)";
+
+    localStorage.setItem(
+        "theme",
+        "dark"
+    );
+
+    darkMode = true;
+}
+
+/* =========================
+   THEME STORAGE
+========================= */
+
+let darkMode = true;
+
+const savedTheme =
+    localStorage.getItem(
+        "theme"
+    );
+
+if (savedTheme === "light") {
+
+    enableLightMode();
+
+} else {
+
+    enableDarkMode();
+}
+
+/* =========================
+   THEME BUTTON
+========================= */
+
+themeButton.addEventListener(
+    "click",
+    () => {
+
+        if (darkMode) {
+
+            enableLightMode();
+
+        } else {
+
+            enableDarkMode();
+        }
     }
-});
+);
+
+/* =========================
+   SCROLL REVEAL
+========================= */
+
 const hiddenElements =
     document.querySelectorAll(
         ".section"
@@ -299,66 +311,138 @@ const hiddenElements =
 
 hiddenElements.forEach((el) => {
 
-    el.classList.add("hidden");
+    el.classList.add(
+        "hidden"
+    );
 });
 
-window.addEventListener("scroll", () => {
+window.addEventListener(
+    "scroll",
+    () => {
 
-    hiddenElements.forEach((el) => {
+        hiddenElements.forEach((el) => {
 
-        const rect =
-            el.getBoundingClientRect();
+            const rect =
+                el.getBoundingClientRect();
 
-        if (rect.top < window.innerHeight - 100) {
+            if (
+                rect.top <
+                window.innerHeight - 100
+            ) {
 
-            el.classList.add("show");
-        }
-    });
-});
+                el.classList.add(
+                    "show"
+                );
+            }
+        });
+    }
+);
+
+/* =========================
+   ACTIVE NAVBAR
+========================= */
 
 const sections =
-    document.querySelectorAll("section");
+    document.querySelectorAll(
+        "section"
+    );
 
 const navItems =
-    document.querySelectorAll("nav a");
+    document.querySelectorAll(
+        "nav a"
+    );
 
-window.addEventListener("scroll", () => {
+window.addEventListener(
+    "scroll",
+    () => {
 
-    let current = "";
+        let current = "";
 
-    sections.forEach((section) => {
+        sections.forEach((section) => {
 
-        const sectionTop =
-            section.offsetTop;
+            const sectionTop =
+                section.offsetTop;
 
-        if (scrollY >= sectionTop - 200) {
+            if (
+                scrollY >=
+                sectionTop - 200
+            ) {
 
-            current =
-                section.getAttribute("id");
+                current =
+                    section.getAttribute(
+                        "id"
+                    );
+            }
+        });
+
+        navItems.forEach((link) => {
+
+            link.classList.remove(
+                "active"
+            );
+
+            if (
+                link
+                    .getAttribute("href")
+                    .includes(current)
+            ) {
+
+                link.classList.add(
+                    "active"
+                );
+            }
+        });
+    }
+);
+
+/* =========================
+   LOADER
+========================= */
+
+window.addEventListener(
+    "load",
+    () => {
+
+        const loader =
+            document.querySelector(
+                "#loader"
+            );
+
+        loader.style.display =
+            "none";
+    }
+);
+
+/* =========================
+   SCROLL TO TOP BUTTON
+========================= */
+
+window.addEventListener(
+    "scroll",
+    () => {
+
+        if (window.scrollY > 300) {
+
+            topButton.style.display =
+                "block";
+
+        } else {
+
+            topButton.style.display =
+                "none";
         }
-    });
+    }
+);
 
-    navItems.forEach((link) => {
+topButton.addEventListener(
+    "click",
+    () => {
 
-        link.classList.remove("active");
+        window.scrollTo({
 
-        if (
-            link.getAttribute("href")
-            .includes(current)
-        ) {
+            top: 0,
 
-            link.classList.add("active");
-        }
-    });
-});
-
-window.addEventListener("load", () => {
-
-    const loader =
-        document.querySelector(
-            "#loader"
-        );
-
-    loader.style.display =
-        "none";
-});
+            behavior: "smooth"
+        });
+    }
+);
