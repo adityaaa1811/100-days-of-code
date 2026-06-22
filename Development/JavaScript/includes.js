@@ -4,8 +4,8 @@ const skills = [
     "JavaScript"
 ];
 
-console.log(
-    skills.includes(
-        "JavaScript"
-    )
-);
+if (skills.includes("JavaScript")) {
+    console.log("Skill Found");
+} else {
+    console.log("Skill Not Found");
+}
